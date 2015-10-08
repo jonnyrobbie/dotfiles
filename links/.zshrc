@@ -16,7 +16,8 @@ bindkey -v
 #alias ls='ls --color=auto'
 alias nyaa='sudo'
 alias please='eval "sudo $(fc -ln -1)"'
-unsetopt nomatch
+
+unsetopt nomatch #so the next aliases would work without quotes
 alias mpv-360p='mpv --ytdl-format 18 '
 alias mpv-720p='mpv --ytdl-format 22 '
 alias mpv-720p60='mpv --ytdl-format 298+140 '
