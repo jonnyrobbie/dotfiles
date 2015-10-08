@@ -1,0 +1,53 @@
+URxvt.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt.shading: 50
+URxvt.depth: 32
+URxvt.background: rgba:0000/0000/0000/8000
+
+!URxvt.color0: Black
+!URxvt.color1: Red3
+!URxvt.color2: Green3
+!URxvt.color3: Yellow3
+!URxvt.color4: Blue3 
+!URxvt.color5: Magenta3
+!URxvt.color6: Cyan3
+!URxvt.color7: AntiqueWhite 
+!URxvt.color8: Grey25 
+!URxvt.color9: Red
+!URxvt.color10: Green
+!URxvt.color11: Yellow
+!URxvt.color12: Blue
+!URxvt.color13: Magenta
+!URxvt.color14: Cyan
+!URxvt.color15: White 
+
+!URxvt.background: 0 
+URxvt.foreground: 15
+
+URxvt.color0: #000000
+URxvt.color1: #ffc0c0
+URxvt.color2: #c0ffc0
+URxvt.color3: #ffffc0
+URxvt.color4: #c0c0ff
+URxvt.color5: #ffc0ff
+URxvt.color6: #c0ffff
+URxvt.color7: #ffffff
+URxvt.color8: #c0c0c0
+!normal colors
+URxvt.color9: #ff8080
+URxvt.color10: #80ff80
+URxvt.color11: #ffff80
+URxvt.color12: #8080ff
+URxvt.color13: #ff80ff
+URxvt.color14: #80ffff
+URxvt.color15: #ffffff
+ 
+URxvt.scrollstyle: plain 
+!scrollbar on the right
+URxvt.scrollBar_right: true
+URxvt.scrollColor: #f47044
+
+! Font color
+URxvt.font: xft:GohuFont:pixelsize=9, \
+            xft:IPAPGothic:pixelsize=9:antialias=false, \
+            xft:GohuFont:pixelsize=9

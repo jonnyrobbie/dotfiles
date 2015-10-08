@@ -1,0 +1,46 @@
+#!/bin/bash
+dotfiles="links" #containing subdirectory
+
+echo "Home directory: " ~
+echo "Dotfile directory: $PWD"
+echo "====="
+homedir=$(echo ~)
+while read -r -u 3 gitdotfile
+do
+	homedotfile=$(echo "$gitdotfile" | sed "s|$dotfiles|$homedir|")
+	if [ -L "$homedotfile" ]
+		then
+		if [ "$(ls -l $homedotfile | awk '{print $11}')" == "$PWD/$gitdotfile" ]
+			then
+			echo "Link $homedotfile already points to $PWD/$gitdotfile. Skipping..."
+		else
+			read -p "Link $homedotfile already exists pointing to $(ls -l $homedotfile | awk '{print $11}'). Overwrite and link to $PWD/$gitdotfile? (y/n)" var_key
+			echo ""
+			if [ "$var_key" == "y" ]
+				then
+				ln -sfv "$PWD/$gitdotfile" "$homedotfile"
+			else
+				echo "Skipping..."
+			fi
+		fi
+	elif [ -f "$homedotfile" ]
+		then
+		read -p "File $homedotfile already exists. Backup it and link to $PWD/$gitdotfile? (y/n)" var_key
+		if [ "$var_key" == "y" ]
+			then
+			cp $homedotfile $homedotfile~
+			ln -sfv "$PWD/$gitdotfile" "$homedotfile"
+		else
+			echo "Skipping..."
+		fi
+	else
+		read -p "File $homedotfile doesn't exist. Link from $PWD/$gitdotfile? (y/n)" var_key
+		if [ "$var_key" == "y" ]
+			then
+			mkdir -pv "$(dirname $homedotfile)"
+			ln -sv "$PWD/$gitdotfile" "$homedotfile"
+		else
+			echo "Skipping..."
+		fi
+	fi
+done 3< <(find $dotfiles -type f)

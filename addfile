@@ -1,0 +1,8 @@
+#!/bin/bash
+dotfiles="links" #containing subdirectory
+if [ -f "$1" ]
+	then
+	mkdir -pv "$(dirname $(echo $1 | sed "s|$(echo ~)|$PWD/$dotfiles|"))"
+fi
+cp -iv $1 $(echo $1 | sed "s|$(echo ~)|$PWD/$dotfiles|")
+echo "Run ./restore to replace files for links."
