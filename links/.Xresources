@@ -1,6 +1,6 @@
 URxvt.transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt.shading: 50
+ URxvt.shading: 50
 URxvt.depth: 32
 URxvt.background: rgba:0000/0000/0000/8000
 
@@ -45,7 +45,8 @@ URxvt.color15: #ffffff
 URxvt.scrollstyle: plain 
 !scrollbar on the right
 URxvt.scrollBar_right: true
-URxvt.scrollColor: #f47044
+!URxvt.scrollColor: #f47044 !orange as per monogatari bg scheme
+URxvt.scrollColor: #000000
 
 ! Font color
 URxvt.font: xft:GohuFont:pixelsize=9, \
