@@ -11,6 +11,7 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 
 [[ $- != *i* ]] && return
+unset SSH_ASKPASS
 
 #aliases
 #alias ls='ls --color=auto'
