@@ -29,6 +29,7 @@ alias ytdl-720p='youtube-dl -f 22 --no-mtime -o "/data/Downloads/Media/[%(upload
 alias ytdl-720p60='youtube-dl -f 298+140 --no-mtime -o "/data/Downloads/Media/[%(uploader)s] %(title)s (720p60)[%(id)s]" '
 alias ytdl-1080p='youtube-dl -f 137+140 --no-mtime -o "/data/Downloads/Media/[%(uploader)s] %(title)s (1080p)[%(id)s]" '
 alias ytdl-1080p60='youtube-dl -f 299+140 --no-mtime -o "/data/Downloads/Media/[%(uploader)s] %(title)s (1080p60)[%(id)s]" '
+alias ytdl-auto='youtube-dl -f 298+140/137+140/136+140/134+140 --no-mtime -o "/data/Downloads/Media/[%(uploader)s] %(title)s (%(height)sp%(fps)s)[%(id)s]" '
 
 #functions
 pacman-orph() {
