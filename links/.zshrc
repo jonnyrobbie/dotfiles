@@ -59,8 +59,16 @@ archey3
 #cmatrix -abs
 source /usr/share/git/completion/git-prompt.sh
 
+eval "$(thefuck --alias)"
+# You can use whatever you want as an alias, like for Mondays:
+eval "$(thefuck --alias FUCK)"
+
 export WINEPREFIX=/data/Wine/win32
 export WINEARCH=win32
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+export PKGDEST=/var/cache/pacman/pkg-pacaur
+export AURDEST=/var/cache/aur/clone
+export SRCDEST=/var/cache/aur/source
+export BUILDDIR=/var/cache/aur/build
