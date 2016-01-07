@@ -18,7 +18,7 @@ unset SSH_ASKPASS
 alias please='eval "sudo $(fc -ln -1)"'
 alias lsa='ls -la --color=always'
 alias c..='cd ..'
-alias c...='cd../..'
+alias c...='cd ../..'
 alias svim='sudo vim'
 
 unsetopt nomatch #so the next aliases would work without quotes
