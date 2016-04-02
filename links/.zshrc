@@ -16,7 +16,7 @@ unset SSH_ASKPASS
 #aliases
 #alias ls='ls --color=auto'
 alias please='eval "sudo $(fc -ln -1)"'
-alias lsa='ls -lah --color=always'
+alias lsa='ls -lah --group-directories-first --full-time --color=always'
 alias c..='cd ..'
 alias c...='cd ../..'
 alias svim='sudo vim'
