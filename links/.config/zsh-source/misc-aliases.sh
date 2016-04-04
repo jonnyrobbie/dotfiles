@@ -1,0 +1,6 @@
+alias please='eval "sudo $(fc -ln -1)"'
+alias lsa='ls -lah --group-directories-first --time-style=long-iso --color=always'
+alias c..='cd ..'
+alias c...='cd ../..'
+alias svim='sudo vim'
+alias lstwitch='livestreamer --default-stream high twitch.tv/ '

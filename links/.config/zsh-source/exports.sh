@@ -1,0 +1,9 @@
+export WINEPREFIX=/data/Wine/win32
+export WINEARCH=win32
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+export PKGDEST=/var/cache/pacman/pkg-pacaur
+export AURDEST=/var/cache/aur/clone
+export SRCDEST=/var/cache/aur/source
+export BUILDDIR=/var/cache/aur/build
