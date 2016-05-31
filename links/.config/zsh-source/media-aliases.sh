@@ -18,3 +18,10 @@ alias ytdl-720p60='youtube-dl -f $yt720p60 -o "$savelocation/[%(uploader)s] %(ti
 alias ytdl-1080p='youtube-dl -f $yt1080p -o "$savelocation/[%(uploader)s] %(title)s (1080p)[%(id)s]" '
 alias ytdl-1080p60='youtube-dl -f $yt1080p60 -o "$savelocation/[%(uploader)s] %(title)s (1080p60)[%(id)s]" '
 alias ytdl-auto='youtube-dl -f $ytauto -o "$savelocation/[%(uploader)s] %(title)s (%(height)sp%(fps)s)[%(id)s]" '
+unset savelocation
+unset yt360p
+unset yt720p
+unset yt720p60
+unset yt1080p
+unset yt1080p60
+unset ytauto
