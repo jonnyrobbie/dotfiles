@@ -5,12 +5,12 @@ pacman-orph() {
     sudo pacman -Rns $(pacman -Qdtq)
   fi
 }
-imgur() {
-    for i in "$@"; do
-        curl -# -F "image"=@"$i" -F "key"="4907fcd89e761c6b07eeb8292d5a9b2a" imgur.com/api/upload.xml|\
-        grep -Eo '<[a-z_]+>http[^<]+'|sed 's/^<.\|_./\U&/g;s/_/ /;s/<\(.*\)>/\x1B[0;34m\1:\x1B[0m /'
-    done
-}
+#imgur() {
+#    for i in "$@"; do
+#        curl -# -F "image"=@"$i" -F "key"="4907fcd89e761c6b07eeb8292d5a9b2a" imgur.com/api/upload.xml|\
+#        grep -Eo '<[a-z_]+>http[^<]+'|sed 's/^<.\|_./\U&/g;s/_/ /;s/<\(.*\)>/\x1B[0;34m\1:\x1B[0m /'
+#    done
+#}
 anils() {
 	filelist=`find '/run/media/marek/My Book/downloads/アニメ' -iregex .*$1.*\.mkv -print0`
 	if [[ -n $filelist ]] then;
@@ -19,5 +19,25 @@ anils() {
 		#echo $filelist | xargs -0 ls -lrt1hgo
 	else
 		echo "No anime found using the search pattern '${1}'."
+	fi
+}
+imgur-screenshot(){
+#dependency: maim, slop, AUR:imgurbash2
+screenname=`date "+%Y-%m-%d_%H-%M"`	
+	if [[ -z $2 ]] then;
+		delay="0"
+	else
+		delay=$2
+	fi
+	if [[ -n $1 ]] then;
+		screenfile="/home/marek/Pictures/screenshots/${1}.png"
+		maim -s -d $delay $screenfile
+		echo "Screenshot saved as $screenfile"
+		imgurbash2 $screenfile
+	else
+		screenfile="/home/marek/Pictures/screenshots/${screenname}.png"
+		maim -s -d $delay $screenfile
+		echo "Screenshot saved as $screenfile"
+		imgurbash2 $screenfile
 	fi
 }
