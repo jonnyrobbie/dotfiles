@@ -1,0 +1,41 @@
+#visualizer
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualization"
+visualizer_in_stereo = "no"
+visualizer_type = "spectrum" (spectrum/wave)
+visualizer_color = "red"
+
+mpd_host = "~/.config/mpd/socket"
+mpd_port = "6600"
+mpd_music_dir = "/data/Mp3"
+
+#		- 0 - default window color (discards all other colors)
+#        - 1 - black
+#        - 2 - red
+#        - 3 - green
+#        - 4 - yellow
+#        - 5 - blue
+#        - 6 - magenta
+#        - 7 - cyan
+#        - 8 - white
+#        - 9 - end of current color
+
+lines_scrolled = "3"
+progressbar_look = "██"
+#progressbar_look = "=▶"
+media_library_primary_tag = "album_artist"
+display_bitrate = "yes"
+ignore_leading_the = "yes"
+mouse_list_scroll_whole_page = "yes"
+enable_window_title = "yes"
+progressbar_boldness = "yes"
+progressbar_color = "yellow"
+progressbar_elapsed_color = "red"
+main_window_highlight_color = "blue"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+user_interface = "alternative"
+locked_screen_width_part = "60"
+browser_sort_format = "%n%f"
