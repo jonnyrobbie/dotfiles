@@ -1,3 +1,5 @@
 [user]
 	name = JonnyRobbie
 	email = marcodv@seznam.cz
+[alias]
+	tree = log --decorate --graph --oneline --date-order
