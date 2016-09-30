@@ -25,7 +25,7 @@ do
 		fi
 	elif [ -f "$homedotfile" ]
 		then
-		read -p "File $homedotfile already exists. Backup it and link to $PWD/$gitdotfile? (y/n)" var_key
+		read -p "File $homedotfile already exists. Back it up and link to $PWD/$gitdotfile? (y/n)" var_key
 		if [ "$var_key" == "y" ]
 			then
 			cp $homedotfile $homedotfile~
