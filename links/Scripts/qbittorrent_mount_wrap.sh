@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 uuid=DA1E35F71E35CCEF
 nomountname=/home/marek/.local/share/data/qBittorrent/BT_backup_nomount
 mountname=/home/marek/.local/share/data/qBittorrent/BT_backup_mount
