@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+pid="/tmp/ytdl-daemon.pid"
+trap "rm -f $pid" SIGSEGV
+trap "rm -f $pid" SIGINT
+
+if [ -e $pid ]; then
+    echo "Another instance is already running. Now quitting..."
+else
+    echo $$ > $pid # pid file doesn't exit, create one and go on
+    until [[ `wc -l < ytdl-queue` = "0" ]]; do
+        ytdlarg=`sed '1q;d' ytdl-queue`
+        sed -i '1d' ytdl-queue
+        echo "Downloading: $ytdlarg" 
+        eval $ytdlarg #ytdl main exec
+        notify-send "Video download finished" "$(ls -t /data/Downloads/Media | head -n1)"
+    done
+    rm -f $pid # remove pid file just before exiting
+fi
