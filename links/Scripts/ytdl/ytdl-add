@@ -8,7 +8,7 @@ _yt[1080p60]="299+140"
 _yt[auto]="${_yt[1080p60]}/${_yt[1080p]}/${_yt[720p60]}/${_yt[720p]}/${_yt[360p]}"
 echo "Adding urls to a queue..."
 for var in "${@:2}"; do
-     echo "youtube-dl -f ${_yt[$1]} -o \"/data/Downloads/Media/[%(uploader)s] %(title)s ($1)[%(id)s]\" $var" >> ytdl-queue
+     echo "youtube-dl -f ${_yt[$1]} -o \"/data/Downloads/Media/[%(uploader)s] %(title)s (%(height)sp%(fps)s)[%(id)s]\" $var" >> ytdl-queue
     echo "Url $var added to youdube-dl queue..."
 done
 echo "Starting ytdl-daemon"
