@@ -7,9 +7,9 @@ if [ -e $pid ]; then
     echo "Another instance is already running. Now quitting..."
 else
     echo $$ > $pid # pid file doesn't exit, create one and go on
-    until [[ `wc -l < ytdl-queue` = "0" ]]; do
-        ytdlarg=`sed '1q;d' ytdl-queue`
-        sed -i '1d' ytdl-queue
+    until [[ `wc -l < /tmp/ytdl-queue` = "0" ]]; do
+        ytdlarg=`sed '1q;d' /tmp/ytdl-queue`
+        sed -i '1d' /tmp/ytdl-queue
         echo "Downloading: $ytdlarg" 
         eval $ytdlarg #ytdl main exec
         notify-send "Video download finished" "$(ls -t /data/Downloads/Media | head -n1)"
