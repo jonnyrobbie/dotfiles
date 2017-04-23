@@ -2,4 +2,4 @@
 	name = JonnyRobbie
 	email = marcodv@seznam.cz
 [alias]
-	tree = log --decorate --graph --oneline --date-order --all
+	tree = log --all --graph --pretty=format:\"%C(auto)%h%d %s %C(white)%an%C(auto) %ad\" --date=format:\"%F %R\"
