@@ -122,7 +122,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-font: pango:GohuFont 9
+font: misc gohup
 
 bindsym $mod+r mode "resize"
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
@@ -145,7 +145,7 @@ bar {
     position          top
     workspace_buttons yes
     
-    font pango:GohuFont 9
+    font misc gohup
     colors {
         background #372925
         statusline #f47044
@@ -158,6 +158,6 @@ bar {
 }
 
 #border
-new_window none 
+#new_window none 
 exec feh --bg-tile  ~/Pictures/profile/wallpapers/monogatari.png
 
