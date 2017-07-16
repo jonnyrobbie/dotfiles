@@ -5,6 +5,29 @@ pacman-orph() {
     sudo pacman -Rns $(pacman -Qdtq)
   fi
 }
+
+pacman-cache() {
+	if [[ $1 != "-r" ]]; then
+		echo "Pacman cache (keep 2):"
+		paccache -dvk2
+		echo "Pacman cache (uninstalled):"
+		paccache -dvu
+		echo "AUR cache (keep 2):"
+		paccache -dvk2 -c /var/cache/pacman/pkg-aur
+		echo "AUR cache (uninstalled):"
+		paccache -dvu -c /var/cache/pacman/pkg-aur
+	else
+		echo "Pacman cache (keep 2):"
+		paccache -rvk2
+		echo "Pacman cache (uninstalled):"
+		paccache -rvu
+		echo "AUR cache (keep 2):"
+		paccache -rvk2 -c /var/cache/pacman/pkg-aur
+		echo "AUR cache (uninstalled):"
+		paccache -rvu -c /var/cache/pacman/pkg-aur
+	fi
+}
+
 #imgur() {
 #    for i in "$@"; do
 #        curl -# -F "image"=@"$i" -F "key"="4907fcd89e761c6b07eeb8292d5a9b2a" imgur.com/api/upload.xml|\
